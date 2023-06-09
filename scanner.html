@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QR Code Scanner</title>
+    <style>
+      #scanner-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      #scanner-container video {
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+
+
+html
+Copy code
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QR Code Scanner</title>
+    <style>
+      #scanner-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      #scanner-container video {
+        width: 100%;
+        height: auto;
+      }
+
+      #scanner-container canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+  </head>
+  <body>
+    <h1>QR Code Scanner</h1>
+    <div id="scanner-container">
+      <video id="video" width="100%" height="auto"></video>
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <script>
+      // Function to handle successful scans
+      function onScanSuccess(qrCode) {
+        console.log('Scan result:', qrCode.data);
+        alert('Scanned: ' + qrCode.data);
+      }
+
+      // Initialize the scanner
+      function startScanner() {
+        const video = document.getElementById('video');
+        const canvas = document.getElementById('canvas');
+        const canvasContext = canvas.getContext('2d');
+        let scanning = false;
+
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function (stream) {
+            video.srcObject = stream;
+            video.play();
+
+            function scanQRCode() {
+              if (scanning) return;
+
+              scanning = true;
+              canvas.width = video.videoWidth;
+              canvas.height = video.videoHeight;
+              canvasContext.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+              const imageData = canvasContext.getImageData(0, 0, canvas.width, canvas.height);
+              const code = jsQR(imageData.data, imageData.width, imageData.height);
+
+              if (code) {
+                drawBoundingBox(code.location);
+                onScanSuccess(code);
+              }
+
+              scanning = false;
+              requestAnimationFrame(scanQRCode);
+            }
+
+            requestAnimationFrame(scanQRCode);
+          })
+          .catch(function (error) {
+            console.error('Error accessing camera:', error);
+          });
+      }
+
+      // Function to draw bounding box around QR code
+      function drawBoundingBox(location) {
+        const canvas = document.getElementById('canvas');
+        const canvasContext = canvas.getContext('2d');
+
+        canvasContext.clearRect(0, 0, canvas.width, canvas.height);
+        canvasContext.beginPath();
+        canvasContext.lineWidth = '2';
+        canvasContext.strokeStyle = 'yellow';
+        canvasContext.moveTo(location.topLeftCorner.x, location.topLeftCorner.y);
+        canvasContext.lineTo(location.topRightCorner.x, location.topRightCorner.y);
+        canvasContext.lineTo(location.bottomRightCorner.x, location.bottomRightCorner.y);
+        canvasContext.lineTo(location.bottomLeftCorner.x, location.bottomLeftCorner.y);
+        canvasContext.lineTo(location.topLeftCorner.x, location.topLeftCorner.y);
+        canvasContext.stroke();
+      }
+
+      // Start scanning
+      startScanner();
+
+      // Add event listener to stop scanning on button click
+      document.getElementById('stopScanning').addEventListener('click', function () {
+        const video = document.getElementById('video');
+        const stream = video.srcObject;
+
+        if (stream) {
+          const tracks = stream.getTracks();
+          tracks.forEach(function (track) {
+            track.stop();
+          });
+          video.srcObject = null;
+        }
+      });
+
+      // Add event listener to clear the scanned results
+      document.getElementById('clearResults').addEventListener('click', function () {
+        alert('No results to clear');
+      });
+    </script>
+
+    <!-- Add a button to stop scanning -->
+    <button id="stopScanning">Stop Scanning</button>
+
+    <!-- Add a button to clear the scanned results -->
+    <button id="clearResults">Clear Results</button>
+
+    <!-- Add link to jsQR library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr"></script>
+  </body>
+</html>

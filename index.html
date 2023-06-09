@@ -5,47 +5,44 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The drip shop</title>
-  <link rel="stylesheet" href="./simple-grid.css">
+  <title>The Drip Shop</title>
+
+  <!-- Add links to CSS files for Owl Carousel and zxing libraries -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-grid/2.4.0/simple-grid.css">
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
-  <!-- bootstrap -->
-
-<!-- headet section -->
-
 </head>
 
 <body class="container">
+
+  <!-- Add a div for the scanner preview -->
+  <!-- Hide it by default using CSS -->
+  <div id='preview' style='display:none'></div>
+
+  <!-- Change button text to "Scan to collection using zxing" -->
+  <!-- Add a data attribute to identify the button in the script -->
   <div class="row">
     <div class="col-6 logo">
-      <img src="./Artistic Textured Ink Brush Stroke Brand Logo.png" class="brand-logo-img" width="150px" height="150px"
-        alt="">
+      <img src="./Artistic Textured Ink Brush Stroke Brand Logo.png" class="brand-logo-img" width="150px" height="150px" alt="">
     </div>
 
     <div class="col-6 navbar">
-      <nav>
-        <ul>
-          <a href="#">HOME</a>
-          <a href="#">MEN</a>
-          <a href="#">WOMEN</a>
-        </ul>
-      </nav>
+      <div class="explore-button">
+        <!-- Update button text and add data-scanner-type attribute -->
+        <button id="startScannerButton" data-scanner-type='zxing'>Scan to collection</button>
+      </div>
     </div>
   </div>
+
   <div class="row">
     <div class="video">
       <video src="./Get 20% offon some items (1).mp4" height="500px" width="600px" autoplay controls>
         Your browser does not support the video tag.
       </video>
     </div>
-    <div class="explore-button">
-      <button>Explore collection</button>
-    </div>
   </div>
-
-
 
   <div class="container">
     <div class="owl-carousel images-section">
@@ -64,61 +61,78 @@
     </div>
   </div>
 
-
-  <div class="row details-section">
-    <div class="col-6">
-      <div>
-        <button> Contact us</button>
-      </div>
-      <div>
-        <button> My order</button>
-      </div>
-      <div>
-        <button> FAQs</button>
-      </div>
+    <!-- Add a div to display the scan result -->
+    <!-- Hide it by default using CSS -->
+    <!-- Update button text to "Close scanner result box" -->
+    <!-- Add a data attribute to identify the button in the script -->
+    <!-- Change "alert()" to update the scan result div -->
+    <div id='scan-result' style='display:none'>
+        <p id='scan-result-text'></p>
+        <!-- Update button text and add data-scanner-type attribute -->
+        <button id="closeScannerResultButton" data-scanner-type='zxing'>Close scanner result box</button>
     </div>
 
-
-
-    <div class="col-6">
-      <div>
-        <button> About us</button>
-      </div>
-      <div>
-        <button> Privacy and cookies</button>
-      </div>
-      <div>
-        <button> Careers</button>
-      </div>
+    <div class="row details-section">
+        <div class="col-6">
+            <div>
+                <button> Contact us</button>
+            </div>
+            <div>
+                <button> My Account</button>
+            </div>
+        </div>
+        <div class="col-6">
+            <div>
+                <button> About</button>
+            </div>
+            <div>
+                <button> Logout</button>
+            </div>
+        </div>
     </div>
-
-  </div>
-  <script src="./app.dom.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      var owl = $(".owl-carousel");
-      owl.owlCarousel({
-        items: 1, // Display only one item at a time
-        loop: true,
-        margin: 20,
-        nav: true, // Show navigation buttons
-        autoplay: true, // Automatically move to the next image
-        autoplayTimeout: 3000, // Set autoplay interval to 3 seconds
-        responsive: {
-          0: {
-            nav: false // Hide navigation buttons on smaller screens
-          },
-          600: {
-            nav: true // Show navigation buttons on larger screens
+    
+    <!-- Add the following scripts for jQuery, Owl Carousel, and zxing -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="./zxing/zxing.min.js"></script>
+    
+    <!-- Add a script tag to contain all your custom JavaScript code -->
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var owl = $(".owl-carousel");
+        owl.owlCarousel({
+          items: 1, // Display only one item at a time
+          loop: true,
+          margin: 20,
+          nav: true, // Show navigation buttons
+          autoplay: true,
+          autoplayTimeout: 3000, // Set autoplay interval to 3 seconds
+          responsive: {
+            0: {
+              nav: false // Hide navigation buttons on smaller screens
+            },
+            600: {
+              nav: true // Show navigation buttons on larger screens
+            }
           }
-        }
+        });
+    
+        // Handle click event for "Scan to collection using zxing" button
+        $('#startScannerButton').click(function () {
+          var scannerType = $(this).data('scanner-type');
+          if (scannerType === 'zxing') {
+            // Open a new window or tab with the scanner page
+            window.open('./scanner.html', '_blank');
+          }
+        });
+    
+        // Handle click event for "Close scanner result box" button
+        $('#closeScannerResultButton').click(function () {
+          $('#scan-result').hide(); // Hide the scan result div
+          $('#scan-result-text').text(''); // Clear the scan result text
+        });
       });
-    });
-  </script>
-  
-</body>
-
-</html>
+    </script>
+  <body>
+      
+  </html>  

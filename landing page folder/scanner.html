@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>QR Code Scanner</title>
+    <!-- Add link to QuaggaJS library -->
+    <script src="https://unpkg.com/quagga/dist/quagga.min.js"></script>
+    <style>
+      #scanner-container {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+        position: relative;
+      }
+
+      #scanner-container video {
+        width: 100%;
+        height: auto;
+      }
+
+      #scanner-container canvas.drawingBuffer {
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>QR Code Scanner</h1>
+    <div id="scanner-container"></div>
+
+    <script>
+      // Function to handle successful scans
+      function onScanSuccess(result) {
+        console.log('Scan result:', result);
+        alert('Scanned: ' + result.codeResult?.code);
+      }
+
+      // Initialize the scanner
+      Quagga.init({
+        inputStream: {
+          name: "Live",
+          type: "LiveStream",
+          target: document.querySelector("#scanner-container"),
+          constraints: {
+            facingMode: "environment" // or "user" for front camera
+          },
+        },
+        decoder: {
+          readers: ["ean_reader", "ean_8_reader", "code_39_reader", "code_39_vin_reader", "code_93_reader", "code_128_reader", "codabar_reader", "upc_reader", "upc_e_reader", "i2of5_reader", "2of5_reader", "code_25_reader", "qr_reader"]
+        },
+        locate: true, // Add the locate configuration object
+      }, function (err) {
+        if (err) {
+          console.error('Error initializing Quagga:', err);
+          return;
+        }
+        Quagga.start();
+
+        // Add event listener to stop scanning on button click
+        document.getElementById('stopScanning').addEventListener('click', function () {
+          Quagga.stop();
+        });
+      });
+
+      // Add event listener to clear the scanned results
+      document.getElementById('clearResults').addEventListener('click', function () {
+        alert('No results to clear');
+      });
+    </script>
+
+      <!-- // Add event listener to clear the scanned results
+      document.getElementById('clearResults').addEventListener('click', function () {
+        alert('No results to clear');
+      }); -->
+    </script>
+
+    <!-- Add a button to stop scanning -->
+    <button id="stopScanning">Stop Scanning</button>
+
+    <!-- Add a button to clear the scanned results -->
+    <button id="clearResults">Clear Results</button>
+
+    <!-- Add link to jsQR library -->
+    <script src="https://cdn.jsdelivr.net/npm/jsqr"></script>
+  </body>
+</html>

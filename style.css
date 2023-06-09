@@ -1,0 +1,161 @@
+body {
+    background-color: white;
+}
+
+
+
+h1 {
+    text-align: center;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    justify-items: center;
+}
+
+
+.the_suits {
+    margin-top: 0.5em;
+}
+
+.the_shoes {
+    margin-top: 0.5em;
+}
+.grid-item {
+    border-radius: 1.5em;
+    border: 2px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.the_pants {
+    margin-top: 0.5em;
+}
+
+.picture {
+    height: 300px;
+    width: 200px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    justify-items: center;
+}
+
+.grid-item {
+    border-radius: 1.5em;
+    border: 2px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.the_pants {
+    margin-top: 0.5em;
+}
+
+.picture {
+    height: 300px;
+    width: 200px;
+}
+
+
+.the_bags {
+    flex-basis: 50%;
+    text-align: center;
+}
+.the_pants{
+    border-radius :1.5em;
+    border: 2px solid black;
+    padding: 1em;
+    margin: 1em;
+    margin-bottom: 1em;
+}
+
+
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1em;
+    justify-items: center;
+}
+
+.grid-item {
+    border-radius: 1.5em;
+    border: 2px solid black;
+    padding: 1em;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.suit{
+    border-radius :1.5em;
+    border: 2px solid black;
+    padding: 1em;
+    margin: 1em;
+    margin-bottom: 1em;
+}
+
+.bags{
+    border-radius: 1.5em;
+    border: 2px solid black;
+    padding : 1em;
+    margin: 1em;
+    margin-bottom: 1em;
+   
+}
+.shoes{
+    border-radius: 1.5em;
+    border: 2px solid black;
+    padding : 1em;
+    margin: 1em;
+    margin-bottom: 1em;   
+}
+.eye_wear{
+    border-radius: 1.5em;
+    border: 2px solid black;
+    padding : 1em;
+    margin: 1em;
+    margin-bottom: 1em;  
+}
+.Formal_wear{
+    border-radius: 1.5em;
+    border: 2px solid black;
+    padding : 1em;
+    margin: 1em;
+    margin-bottom: 1em;  
+}
+.bags{
+    border-radius: 1.5em;
+    border: 2px solid black;
+    padding : 1em;
+    margin: 1em;
+    margin-bottom: 1em;   
+} 
+
+.The_collection{
+    display: flex;
+}
+.picture{
+    height: 200px;
+    width:200px;
+}

@@ -13,7 +13,13 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html5-qrcode/2.3.8/html5-qrcode.min.js" integrity="sha512-r6rDA7W6ZeQhvl8S7yRVQUKVHdexq+GAlNkNNqVC7YyIV+NwqCTJe2hDWCiffTyRNOeGEzRRJ9ifvRm/HCzGYg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
+
+<div class="part scanner-section" >
+  <div style="width: 500px" id="reader"></div>
+</div>
 
 <body class="container">
 
@@ -30,10 +36,13 @@
 
     <div class="col-6 navbar">
       <div class="explore-button">
-        <!-- Update button text and add data-scanner-type attribute -->
-        <button id="startScannerButton" data-scanner-type='zxing'>Scan to collection</button>
+        <!-- Update href attribute instead of src -->
+        <a href="" id="startScannerButton" data-scanner-type="zxing">Scan to collection</a>
+        <a href="./mens.html" id="startScannerButton" data-scanner-type="zxing">Mens</a>
+        <a href="./woman.html" id="startScannerButton" data-scanner-type="zxing">Womans</a>
       </div>
     </div>
+    
   </div>
 
   <div class="row">
@@ -133,6 +142,26 @@
         });
       });
     </script>
+
+
+<script>
+
+function onScanSuccess(decodedText, decodedResult) {
+  // Handle on success condition with the decoded text or result.
+  // console.log(`Scan result: ${decodedText}`, decodedResult);
+  console.log(decodedText);
+  console.log(decodedResult);
+
+  window.location.href=decodedText
+
+}
+
+var html5QrcodeScanner = new Html5QrcodeScanner(
+"reader", { fps: 10, qrbox: 250 });
+
+html5QrcodeScanner.render(onScanSuccess);
+
+</script>
   <body>
       
   </html>  

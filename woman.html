@@ -2,137 +2,185 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Drip Shop</title>
-
-  <!-- Add links to CSS files for Owl Carousel and zxing libraries -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-grid/2.4.0/simple-grid.css">
-  <link rel="stylesheet" href="./style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Drip Store App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body class="container">
+<centre>
 
-  <!-- Add a div for the scanner preview -->
-  <!-- Hide it by default using CSS -->
-  <div id='preview' style='display:none'></div>
+    <body>
+        <div class="women-catalogue">
+            <h1 class="head">Women</h1>
+            <div class="women">
 
-  <!-- Change button text to "Scan to collection using zxing" -->
-  <!-- Add a data attribute to identify the button in the script -->
-  <div class="row">
-    <div class="col-6 logo">
-      <img src="./Artistic Textured Ink Brush Stroke Brand Logo.png" class="brand-logo-img" width="150px" height="150px" alt="">
-    </div>
 
-    <div class="col-6 navbar">
-      <div class="explore-button">
-        <!-- Update button text and add data-scanner-type attribute -->
-        <button id="startScannerButton" data-scanner-type='zxing'>Scan to collection</button>
-      </div>
-    </div>
-  </div>
+                <div class="bags-shoes">
+                    <div class="bags"><img src="/Images/women-bag.jpg" alt="" width="110">
+                        <h3>Bags</h3>
+                    </div>
+                    <div class="shoes"><img src="/Images/women-shoes.png" alt="" width="75">
+                        <h3>Shoes</h3>
+                    </div>
 
-  <div class="row">
-    <div class="video">
-      <video src="./Get 20% offon some items (1).mp4" height="500px" width="600px" autoplay controls>
-        Your browser does not support the video tag.
-      </video>
-    </div>
-  </div>
+                </div>
 
-  <div class="container">
-    <div class="owl-carousel images-section">
-      <div class="item">
-        <img src="./Image1.jpeg" height="350px" width="50px" alt="">
-        <p>Tracksuits</p>
-      </div>
-      <div class="item">
-        <img src="./image2.jpeg" height="350px" width="50px" alt="">
-        <p>Skirts</p>
-      </div>
-      <div class="item">
-        <img src="./image3.jpeg" height="350x" width="50px" alt="">
-        <p>Sneakers</p>
-      </div>
-    </div>
-  </div>
+                <div class="sleepwear-swimwear">
+                    <div class="sleepwear">
+                        <img src="/Images/women-sleepwear.jpeg" alt="" width="70">
+                        <h3>Sleepwear</h3>
+                    </div>
+                    <div class="swimwear">
+                        <img src="/Images/swimwear.webp" alt="" width="100">
+                        <h3>Swimwear</h3>
+                    </div>
 
-    <!-- Add a div to display the scan result -->
-    <!-- Hide it by default using CSS -->
-    <!-- Update button text to "Close scanner result box" -->
-    <!-- Add a data attribute to identify the button in the script -->
-    <!-- Change "alert()" to update the scan result div -->
-    <div id='scan-result' style='display:none'>
-        <p id='scan-result-text'></p>
-        <!-- Update button text and add data-scanner-type attribute -->
-        <button id="closeScannerResultButton" data-scanner-type='zxing'>Close scanner result box</button>
-    </div>
+                </div>
 
-    <div class="row details-section">
-        <div class="col-6">
-            <div>
-                <button> Contact us</button>
+                <div class="tops-accessories">
+                    <div class="tops"> <img src="/Images/top.jpeg" alt="" width="100">
+                        <h3>Tops</h3>
+                    </div>
+
+                    <div class="access">
+                        <img src="/Images/access.jpeg" alt="" width="100">
+                        <h3>Accessories</h3>
+                    </div>
+
+                </div>
+
+
             </div>
-            <div>
-                <button> My Account</button>
+
+            <h1 class="head-2">Bags Collection</h1>
+
+
+
+
+            <div class="bags2">
+
+
+
+                <div>
+                    <img src="/Images/bag2.png" alt="" width="100" class="bagg2">
+
+
+
+                </div>
+
+                <img src="/Images/bag3.png" alt="" width="100" class="bagg3">
+
+
+
+
+
+                <div>
+                    <img src="/Images/bag4.jpeg" alt="" width="100" class="bagg4">
+
+
+
+
+
+                </div>
+
+                <div>
+
+                    <img src="/Images/bag5.jpeg" alt="" width="100" class="bagg5">
+
+
+
+
+                </div>
+
+
             </div>
+
+            <h1 class="head-3">Sleepwear</h1>
+
+
+
+
+            <div class="sleepwear2">
+
+
+
+                <div>
+                    <img src="/Images/sleepwear2.webp" alt="" width="100" class="sleep2">
+
+
+
+                </div>
+
+                <img src="/Images/sleepwear3.webp" alt="" width="100" class="sleep3">
+
+
+
+
+
+                <div>
+                    <img src="/Images/sleepwear4.webp" alt="" width="100" class="sleep4">
+
+                </div>
+
+                <div>
+
+                    <img src="/Images/women-sleepwear.jpeg" alt="" width="100" class="sleep5">
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+            <h1 class="head-4">Tops</h1>
+
+
+
+
+            <div class="tops2">
+
+
+
+                <div>
+                    <img src="Images/top.jpeg" alt="" width="100" class="top1">
+
+
+
+                </div>
+
+                <img src="/Images/top2.jpg" alt="" width="100" class="top2">
+
+
+
+
+
+                <div>
+                    <img src="/Images/top3.jpg" alt="" width="100" class="top3">
+
+                </div>
+
+                <div>
+
+                    <img src="/Images/top4.jpeg" alt="" width="100" class="top4">
+
+
+
+
+                </div>
+
+
+            </div>
+
+
+
+
+            
         </div>
-        <div class="col-6">
-            <div>
-                <button> About</button>
-            </div>
-            <div>
-                <button> Logout</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Add the following scripts for jQuery, Owl Carousel, and zxing -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
-    <script type="text/javascript" src="./zxing/zxing.min.js"></script>
-    
-    <!-- Add a script tag to contain all your custom JavaScript code -->
-    <script type="text/javascript">
-      $(document).ready(function () {
-        var owl = $(".owl-carousel");
-        owl.owlCarousel({
-          items: 1, // Display only one item at a time
-          loop: true,
-          margin: 20,
-          nav: true, // Show navigation buttons
-          autoplay: true,
-          autoplayTimeout: 3000, // Set autoplay interval to 3 seconds
-          responsive: {
-            0: {
-              nav: false // Hide navigation buttons on smaller screens
-            },
-            600: {
-              nav: true // Show navigation buttons on larger screens
-            }
-          }
-        });
-    
-        // Handle click event for "Scan to collection using zxing" button
-        $('#startScannerButton').click(function () {
-          var scannerType = $(this).data('scanner-type');
-          if (scannerType === 'zxing') {
-            // Open a new window or tab with the scanner page
-            window.open('./scanner.html', '_blank');
-          }
-        });
-    
-        // Handle click event for "Close scanner result box" button
-        $('#closeScannerResultButton').click(function () {
-          $('#scan-result').hide(); // Hide the scan result div
-          $('#scan-result-text').text(''); // Clear the scan result text
-        });
-      });
-    </script>
-  <body>
-      
-  </html>  
+    </body>
+
+</html>

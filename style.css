@@ -1,0 +1,215 @@
+/* .head{
+    text-align: center;
+} */
+.women {
+
+    display: flex;
+  
+}
+.bags-shoes {
+   
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+ 
+}
+.bags {
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+   
+    
+
+}
+.shoes {
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+
+.sleepwear-swimwear {
+    
+   
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+.sleepwear {
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+.swimwear {
+    
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+
+
+
+
+.tops-accessories {
+    
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    
+}
+.tops {
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    
+}
+.access {
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    
+}
+
+
+
+/* 
+.head-2{
+    text-align: center;
+}
+ */
+
+
+
+
+
+
+
+
+
+.bags2{
+    display: flex;
+}
+
+.bagg2{
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+.bagg3{
+
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+
+}
+
+    .bagg4{
+        border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    }
+    .bagg5{
+        border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    }
+    
+    /* .head-3{
+        text-align: center;
+    } */
+    .sleep2{
+        border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    }
+    .sleep3{
+        border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    }
+    .sleep4{
+        border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    }
+    .sleep5{
+        border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+    }
+    .sleepwear2{
+
+    display: flex;
+  
+}
+
+.top1{
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+.top2{
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+
+.top3{
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+
+.top4{
+    border: 1px solid black;
+    padding:1em;
+    margin:1em;
+    margin-bottom: 1.5em;
+    border-radius:1.5em;
+}
+.tops2{
+    display: flex;
+}
+
+/* 
+@media (min-width:580px) {
+    .women-catalogue{
+        
+    }
+} */
